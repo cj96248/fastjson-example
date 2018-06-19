@@ -10,10 +10,10 @@ import com.training.entity.America;
 import com.training.entity.Country;
 /**
  * 带泛型的Jave bean转换
- * @author Develop
+ * @author Jiang, Chao
  *
  */
-public class GenericConvertor {
+public class JSONwithGeneric {
 
 	/**
 	 * 泛型对象不能简单转换
@@ -24,8 +24,8 @@ public class GenericConvertor {
 		Object obj = JSON.parseObject(str, Country.class);
 		System.out.println(obj);
 		//Country [code=11, name=America, state={"capital":"Washington","language":"English"}]
-		Country<America> cy = JSON.parseObject(str, Country.class);
-		System.out.println(cy);
+		Country<America> country = JSON.parseObject(str, Country.class);
+		System.out.println(country);
 		//Country [code=11, name=America, state={"capital":"Washington","language":"English"}]
 	}
 	/**
