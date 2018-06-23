@@ -1,4 +1,4 @@
-package com.training;
+package com.training.serialize;
 
 import java.lang.reflect.Type;
 

@@ -1,4 +1,4 @@
-package com.training.entity;
+package com.training.entity.enumeration;
 
 /**
  * 简单枚举类型：一周中的星期几

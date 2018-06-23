@@ -1,4 +1,4 @@
-package com.training.entity;
+package com.training.entity.enumeration;
 /**
  * 带有值的枚举类型：选择颜色
  * @author Jiang, Chao
@@ -11,7 +11,7 @@ public enum Color {
 	GREEN("green"),
 	YELLOW("yellow");
 	
-	String value;
+	public String value;
 	
 	Color(String value){
 		this.value = value;
@@ -24,6 +24,5 @@ public enum Color {
 	public String toString(){
 		return value;
 	}
-	
 	
 }

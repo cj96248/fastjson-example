@@ -1,4 +1,5 @@
-package com.training.entity;
+package com.training.entity.enumeration;
+
 /**
  * 含有枚举类型
  * @author Jiang, Chao
