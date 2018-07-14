@@ -1,8 +1,5 @@
 package com.training.serialize.enumeration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
@@ -51,7 +48,16 @@ public class JSONwithEnum {
 		Schedule schedule = new Schedule();
 		schedule.setWeek(Week.SUN);
 		
+		String jsonString = JSON.toJSONString(schedule);
+		System.out.println(jsonString); //{"code":0,"week":"SUN"}
+	}
+	
+	@Test
+	public void test6(){
+		Schedule schedule = new Schedule();
+		schedule.setWeek(Week.MON);
+		
 		String jsonString = JSON.toJSONString(schedule, SerializerFeature.WriteEnumUsingName);
-		System.out.println(jsonString);
+		System.out.println(jsonString); //{"code":0,"week":"MON"}
 	}
 }
