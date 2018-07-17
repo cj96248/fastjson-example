@@ -18,7 +18,7 @@ public class PathExample {
 	@BeforeClass
 	public static void init() {
 		employee.setId(1);
-		employee.setName("测试");
+		employee.setName("小明");
 		
 		List<String> list = Arrays.asList("张三","李四","王五","赵六");
 		employee.setColleague(list);
@@ -30,7 +30,7 @@ public class PathExample {
 	@Test
 	public void test1() {
 		Object name = JSONPath.eval(employee, "$.name");
-		System.out.println(name); //测试
+		System.out.println(name); //小明
 		
 		Object ename = JSONPath.eval(employee, "$['id']");
 		System.out.println(ename); //1
@@ -56,14 +56,26 @@ public class PathExample {
 	@Test
 	public void test3() {
 		boolean hasName = JSONPath.contains(employee, "$.name");
-		System.out.println(hasName); //4
+		System.out.println(hasName); //true
 		
-		boolean size = JSONPath.contains(empty, "$");
-		System.out.println(size); //3
+		boolean obj = JSONPath.contains(empty, "$");
+		System.out.println(obj); //true
 		
-		Object none = JSONPath.size(employee, "$.name");
+		boolean none = JSONPath.contains(employee, "$.name");
 		System.out.println(none); //-1
+	}
+	/**
+	 * path中是否存在/包含某值
+	 */
+	@Test
+	public void test4() {
+		boolean hasName = JSONPath.containsValue(employee, "$.name","小明");
+		System.out.println(hasName); //true
 		
-
+		boolean obj = JSONPath.containsValue(empty, "$","");
+		System.out.println(obj); //false
+		
+		boolean none = JSONPath.containsValue(employee, "$.id","11");
+		System.out.println(none); //false
 	}
 }
