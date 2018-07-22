@@ -24,4 +24,6 @@ FastJson是阿里巴巴的开源JSON解析库，它可以解析JSON格式的字�
 FastJson对于json格式字符串的解析主要用到了一下三个类：  
 1.JSON：fastJson的解析器，用于JSON格式字符串与JSON对象及javaBean之间的转换  
 2.JSONObject：fastJson提供的json对象    
-3.JSONArray：fastJson提供json数组对象  
+3.JSONArray：fastJson提供json数组对象
+当然，还提供如下工具
+JSONPath：fastJson提供json路径表达式支持
